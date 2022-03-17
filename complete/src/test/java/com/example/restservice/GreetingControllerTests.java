@@ -34,6 +34,8 @@ public class GreetingControllerTests {
 	@Autowired
 	private MockMvc mockMvc;
 
+	
+// The test below performs a GET request for the "/greeting" route and if the request returns successfully, the returned JSON is expected to have a content field with the value: "Hello, World!".
 	@Test
 	public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
 
@@ -41,6 +43,7 @@ public class GreetingControllerTests {
 				.andExpect(jsonPath("$.content").value("Hello, World!"));
 	}
 
+// The test below performs a GET request for the "/greeting" route with a name parameter and a value of: "Spring Community" and if the request returns successfully, it is expected that the JSON content field has the value: Hello, Spring Community!
 	@Test
 	public void paramGreetingShouldReturnTailoredMessage() throws Exception {
 
